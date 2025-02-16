@@ -1,0 +1,108 @@
+/* PC */
+
+@media (min-width: 992px) {
+    .mobile-header{
+        display: none;
+    }
+}
+
+/* Tablet & mobile */
+@media (max-width: 991.98px) {
+  .navbar {
+    display: none;
+  }
+  .header-top {
+    position: relative;
+  }
+  .header__logo {
+    position: absolute;
+    left: 50%;
+    translate: -50% -50%;
+  }
+
+  .menu-header__icon {
+    position: absolute;
+    top: 37px;
+    left: 43px;
+    color: #fff;
+    width: 24px;
+    z-index: 3;
+  }
+
+  /* căn phần overlay */
+
+  .menu-overlay{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    z-index: 1;
+    /* bình thường ẩn overlay đi */
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+
+  /* kiểm tra menu checkbox được check? */
+
+  .menu-checkbox:checked ~ .menu-overlay{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-drawer{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.174);
+    inset: 0 40% 0 0;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    padding: 60px;
+  }
+  /* kiểm tra menu checkbox được check thì ẩn hiện menu drawer */
+  .menu-checkbox:checked ~ .menu-drawer{
+    transform: translateX(0);
+  }
+
+  /* menu top */
+  .close__menu{
+    width: 24px;
+    color: #fff;
+  }
+
+  .menu-drawer__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar__list{
+    margin-top: 25px;
+    flex-direction: column;
+  }
+
+  #navbar__list--mobile{
+    margin-top: 25px;
+  }
+
+  .navbar__link{
+    display: block;
+    font-size: 2rem;
+  }
+
+  .navbar__link:hover{
+    background-color: cadetblue;
+  }
+}
+/* Tablet  */
+@media (min-width: 768px) and(max-width:991.98px) {
+}
+/* Mobile */
+@media (max-width: 767.98px) {
+}
+
+
+/* tạm ẩn phần không liên quan */
+
+.hero,.footer,main{
+    display: none;
+}
